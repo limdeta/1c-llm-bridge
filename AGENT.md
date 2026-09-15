@@ -76,7 +76,7 @@ powershell -NoProfile -File bridge\onec.ps1 meta catalogs
 ## Удалённый режим (SSH)
 
 Мост обязан работать на той машине, где стоит 1С; ты сам можешь быть на другой.
-Базовый путь (PowerShell есть и там, и там):
+Если у тебя есть PowerShell (в том числе на своей стороне) — короткий путь:
 
 ```powershell
 $env:ONEC_SSH = "<пользователь>@<машина-с-1С>"
@@ -85,16 +85,18 @@ $env:ONEC_CONNECTION_STRING = 'File="C:\Bases\МояБаза";Usr="Имя";Pwd="
 powershell -NoProfile -File bridge\remote.ps1 check
 ```
 
-Если вызов идёт не из PowerShell (bash-оболочка харнеса, пакетный скрипт), есть
-`tools/ssh_exec.py` — то же самое, но без зависимости от PowerShell на твоей стороне:
+Если PowerShell у тебя нет (Linux-харнес, bash-оболочка) — `tools/ssh_exec.py`,
+зависимостей у него нет:
 
 ```bash
-python3 tools/ssh_exec.py --target user@vm --bridge C:/1c-bridge/bridge/onec.ps1 \
-    --cs 'Srvr="srv";Ref="база";Usr="имя";Pwd=""' query "ВЫБРАТЬ ПЕРВЫЕ 5 Наименование ИЗ Справочник.Товары"
+export ONEC_CONNECTION_STRING='Srvr="srv";Ref="база";Usr="имя";Pwd=""'
+python3 tools/ssh_exec.py --target user@vm --bridge C:/1c-bridge/bridge/onec.ps1 query "ВЫБРАТЬ ПЕРВЫЕ 5 Наименование ИЗ Справочник.Товары"
 ```
 
-Кириллица в аргументах передаётся через `-EncodedCommand` (base64 UTF-16) — иначе оболочка
-Windows ломает кодировку (грабля № 48 в `PITFALLS.md`).
+Строку соединения передавай **через переменную окружения**, а не аргументом: PowerShell
+искажает кавычки при передаче аргументов чужим программам (грабля № 47), а кириллицу в
+аргументах ломает SSH-оболочка Windows (грабля № 48) — поэтому внутри всё идёт через
+`-EncodedCommand` (base64 UTF-16).
 
 ## Если чего-то не хватает
 
