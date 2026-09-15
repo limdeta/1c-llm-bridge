@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Мост к 1С:Предприятие через COM без Python и PowerShell.
+       Сборка (см. README, раздел «Мост на C#»):
+         1) dotnet publish src/onec-cs -c Release -o bridge/bin_fd
+            (framework-dependent; на машине нужен .NET Runtime)
+         2) dotnet publish src/onec-cs -c Release -r win-x64 -p:PublishSingleFile=true
+            -p:SelfContained=true -o bridge/bin
+            (самодостаточный, около 70 МБ, .NET не требуется) -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>onec-cs</AssemblyName>
+    <RootNamespace>onec_cs</RootNamespace>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <AssemblyTitle>onec-cs</AssemblyTitle>
+    <Product>onec-cs</Product>
+    <Company>onec-cs</Company>
+  </PropertyGroup>
+
+</Project>

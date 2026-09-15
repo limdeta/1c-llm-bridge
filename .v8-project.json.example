@@ -1,0 +1,16 @@
+{
+  "v8path": "C:\\Program Files\\1cv8\\8.3.18.1208\\bin",
+  "databases": [
+    {
+      "id": "dev",
+      "name": "МояБаза",
+      "type": "file",
+      "path": "C:\\Bases\\МояБаза",
+      "user": "Администратор",
+      "password": "",
+      "aliases": ["dev", "база", "infobase", "инфобаза"],
+      "branches": ["dev", "main", "master"]
+    }
+  ],
+  "default": "dev"
+}

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ChartOfAccountsPredefinedItems" version="2.11">
+	<Item id="7791e4e0-da65-4997-a5c6-7fb5ee75ea62">
+		<Name>Товары</Name>
+		<Code>41</Code>
+		<Description>Товары</Description>
+		<AccountType>Active</AccountType>
+		<OffBalance>false</OffBalance>
+		<Order>41</Order>
+		<AccountingFlags/>
+		<ExtDimensionTypes/>
+	</Item>
+	<Item id="219e1dd5-db7e-48fb-8027-498e0227fe50">
+		<Name>Касса</Name>
+		<Code>50</Code>
+		<Description>Касса</Description>
+		<AccountType>Active</AccountType>
+		<OffBalance>false</OffBalance>
+		<Order>50</Order>
+		<AccountingFlags/>
+		<ExtDimensionTypes/>
+	</Item>
+	<Item id="1c0e268d-6ede-4269-a9e2-c77569360dca">
+		<Name>РасчетыСПоставщиками</Name>
+		<Code>60</Code>
+		<Description>Расчеты с поставщиками</Description>
+		<AccountType>Passive</AccountType>
+		<OffBalance>false</OffBalance>
+		<Order>60</Order>
+		<AccountingFlags/>
+		<ExtDimensionTypes/>
+	</Item>
+	<Item id="7af6a8f2-204e-42a9-9dec-7908b2128cff">
+		<Name>РасчетыСПокупателями</Name>
+		<Code>62</Code>
+		<Description>Расчеты с покупателями</Description>
+		<AccountType>Active</AccountType>
+		<OffBalance>false</OffBalance>
+		<Order>62</Order>
+		<AccountingFlags/>
+		<ExtDimensionTypes/>
+	</Item>
+	<Item id="ceb31618-4784-439e-b145-d65fbe7098db">
+		<Name>Продажи</Name>
+		<Code>90</Code>
+		<Description>Продажи</Description>
+		<AccountType>ActivePassive</AccountType>
+		<OffBalance>false</OffBalance>
+		<Order>90</Order>
+		<AccountingFlags/>
+		<ExtDimensionTypes/>
+		<ChildItems>
+			<Item id="d0774d99-831c-4108-bed0-89f695c1ae95">
+				<Name>Выручка</Name>
+				<Code>90.01</Code>
+				<Description>Выручка</Description>
+				<AccountType>Passive</AccountType>
+				<OffBalance>false</OffBalance>
+				<Order>90.01</Order>
+				<AccountingFlags/>
+				<ExtDimensionTypes/>
+			</Item>
+			<Item id="39d81458-7acc-469f-959d-e9e87dfa40b0">
+				<Name>СебестоимостьПродаж</Name>
+				<Code>90.02</Code>
+				<Description>Себестоимость продаж</Description>
+				<AccountType>Active</AccountType>
+				<OffBalance>false</OffBalance>
+				<Order>90.02</Order>
+				<AccountingFlags/>
+				<ExtDimensionTypes/>
+			</Item>
+		</ChildItems>
+	</Item>
+	<Item id="e6ca73cd-c3e0-4803-9b76-bc07e7a3fed4">
+		<Name>ПрибылиУбытки</Name>
+		<Code>99</Code>
+		<Description>Прибыли и убытки</Description>
+		<AccountType>ActivePassive</AccountType>
+		<OffBalance>false</OffBalance>
+		<Order>99</Order>
+		<AccountingFlags/>
+		<ExtDimensionTypes/>
+	</Item>
+</PredefinedData>

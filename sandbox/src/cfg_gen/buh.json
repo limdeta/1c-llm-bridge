@@ -1,0 +1,19 @@
+[
+  { "type": "ChartOfAccounts", "name": "Хозрасчетный", "synonym": "Хозрасчетный",
+    "predefined": [
+      { "name": "Товары", "code": "41", "accountType": "Active", "order": "41", "description": "Товары" },
+      { "name": "Касса", "code": "50", "accountType": "Active", "order": "50", "description": "Касса" },
+      { "name": "РасчетыСПоставщиками", "code": "60", "accountType": "Passive", "order": "60", "description": "Расчеты с поставщиками" },
+      { "name": "РасчетыСПокупателями", "code": "62", "accountType": "Active", "order": "62", "description": "Расчеты с покупателями" },
+      { "name": "Продажи", "code": "90", "accountType": "ActivePassive", "order": "90", "description": "Продажи",
+        "childItems": [
+          { "name": "Выручка", "code": "90.01", "accountType": "Passive", "order": "90.01", "description": "Выручка" },
+          { "name": "СебестоимостьПродаж", "code": "90.02", "accountType": "Active", "order": "90.02", "description": "Себестоимость продаж" }
+        ] },
+      { "name": "ПрибылиУбытки", "code": "99", "accountType": "ActivePassive", "order": "99", "description": "Прибыли и убытки" }
+    ] },
+  { "type": "AccountingRegister", "name": "Хозрасчетный", "synonym": "Хозрасчетный",
+    "chartOfAccounts": "ChartOfAccounts.Хозрасчетный",
+    "correspondence": true,
+    "resources": ["Сумма: Number(15,2)"] }
+]

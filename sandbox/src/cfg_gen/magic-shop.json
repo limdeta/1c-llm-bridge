@@ -1,0 +1,58 @@
+[
+  { "type": "Enum", "name": "ВидыТоваров",
+    "synonym": "Виды товаров",
+    "values": ["Палочки", "Зелья", "ХрустальныеШары", "Книги", "Прочее"] },
+  { "type": "Enum", "name": "ВидыКонтрагентов",
+    "synonym": "Виды контрагентов",
+    "values": ["Покупатель", "Поставщик"] },
+  { "type": "Enum", "name": "Валюты",
+    "synonym": "Валюты",
+    "values": ["Галлеон", "Сикль", "Кнат"] },
+
+  { "type": "Catalog", "name": "Товары", "synonym": "Товары", "descriptionLength": 100,
+    "attributes": [
+      "ЦенаПродажи: Number(15,2)",
+      "ЦенаЗакупки: Number(15,2)",
+      "ВидТовара: EnumRef.ВидыТоваров",
+      "МагическаяСила: Number(10,0)",
+      "Описание: String(500)"
+    ] },
+  { "type": "Catalog", "name": "Контрагенты", "synonym": "Контрагенты", "descriptionLength": 100,
+    "attributes": [
+      "ВидКонтрагента: EnumRef.ВидыКонтрагентов",
+      "Адрес: String(200)",
+      "Телефон: String(50)"
+    ] },
+
+  { "type": "Document", "name": "ПродажаТовара", "synonym": "Продажа товара",
+    "registerRecords": ["AccumulationRegister.ОстаткиТоваров", "AccumulationRegister.Продажи"],
+    "attributes": ["Контрагент: CatalogRef.Контрагенты"],
+    "tabularSections": { "Товары": [
+      "Товар: CatalogRef.Товары",
+      "Количество: Number(15,3)",
+      "Цена: Number(15,2)",
+      "Сумма: Number(15,2)"
+    ] } },
+  { "type": "Document", "name": "ЗакупкаТовара", "synonym": "Закупка товара",
+    "registerRecords": ["AccumulationRegister.ОстаткиТоваров", "AccumulationRegister.Закупки"],
+    "attributes": ["Поставщик: CatalogRef.Контрагенты"],
+    "tabularSections": { "Товары": [
+      "Товар: CatalogRef.Товары",
+      "Количество: Number(15,3)",
+      "Цена: Number(15,2)",
+      "Сумма: Number(15,2)"
+    ] } },
+
+  { "type": "AccumulationRegister", "name": "ОстаткиТоваров", "synonym": "Остатки товаров",
+    "registerType": "Balance",
+    "dimensions": ["Товар: CatalogRef.Товары"],
+    "resources": ["Количество: Number(15,3)"] },
+  { "type": "AccumulationRegister", "name": "Продажи", "synonym": "Продажи",
+    "registerType": "Turnovers",
+    "dimensions": ["Товар: CatalogRef.Товары"],
+    "resources": ["Количество: Number(15,3)", "Сумма: Number(15,2)", "Себестоимость: Number(15,2)"] },
+  { "type": "AccumulationRegister", "name": "Закупки", "synonym": "Закупки",
+    "registerType": "Turnovers",
+    "dimensions": ["Товар: CatalogRef.Товары"],
+    "resources": ["Количество: Number(15,3)", "Сумма: Number(15,2)"] }
+]

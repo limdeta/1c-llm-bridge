@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Users xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable">
+	<User uuid="33333333-cccc-4d0e-9f70-8192a3b4c5d6">
+		<InternalInfo>
+			<xr:ContainedObject>
+				<xr:ClassId>e37f4e91-8ce8-4ff8-a0a7-3b161d02dc74</xr:ClassId>
+				<xr:ObjectId>44444444-dddd-4e1f-a081-92a3b4c5d6e7</xr:ObjectId>
+			</xr:ContainedObject>
+		</InternalInfo>
+		<Properties>
+			<Name>Администратор</Name>
+			<FullName>Администратор</FullName>
+			<Authentication>
+				<AuthenticationOnStartup>true</AuthenticationOnStartup>
+				<OSAuthentication>false</OSAuthentication>
+			</Authentication>
+			<Password/>
+			<DisablePasswordChange>false</DisablePasswordChange>
+			<ShowInList>true</ShowInList>
+			<Role>Role.ПолныеПрава</Role>
+		</Properties>
+	</User>
+</Users>
