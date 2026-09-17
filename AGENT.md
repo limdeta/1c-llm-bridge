@@ -20,6 +20,7 @@
 | [`docs/core/PLAYBOOK.md`](docs/core/PLAYBOOK.md) | метод: инкремент, гейт по задаче, карта, спеки |
 | [`docs/core/LIMITS.md`](docs/core/LIMITS.md) | лимиты, запреты, что делать при отказе |
 | [`docs/core/TOOLS.md`](docs/core/TOOLS.md) | какими операциями ты вообще можешь дотянуться до 1С |
+| [`docs/core/MODES.md`](docs/core/MODES.md) | **два режима: живые данные через COM и снимок кода через контейнер** |
 | [`docs/core/PITFALLS.md`](docs/core/PITFALLS.md) | общие грабли платформы, COM, PowerShell, запросов |
 | [`docs/company/ENVIRONMENT.md`](docs/company/ENVIRONMENT.md) | стенд, конфигурация, ограничения среды |
 | [`docs/company/ACCESS.md`](docs/company/ACCESS.md) | что именно тебе разрешено и как тебя останавливают |
